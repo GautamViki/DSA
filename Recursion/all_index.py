@@ -7,4 +7,4 @@ def find_all_index(array, i, x):
     return arr
 
 list = [1,2,3,4,2,5,2,6,5,4,2]
-print(find_all_index(list,0,2))
+print(find_all_index(list,0,5))
