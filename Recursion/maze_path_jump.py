@@ -12,7 +12,7 @@ def get_maze_path_jump(sr,sc,dr,dc):
         for path in hpaths:
             jump_paths.append('h'+str(jump)+path)
 
-    if dr - sr:  # equivalent to checking if (dr - sc) != 0
+    if dr - sr:
         for jump in range(1,dc - sc+1):
             dpaths = get_maze_path_jump(sr+jump, sc + jump, dr, dc)
             for path in dpaths:
