@@ -14,4 +14,15 @@ def get_maze_path(sr,sc,dr,dc):
         paths.append('h'+path)
     return paths
 
-print(get_maze_path(1,1,2,2))
+print(get_maze_path(1,1,2,3))
+
+def print_maze_path(sr,sc,dr,dc,path):
+    if sr == dr and sc == dc:
+        print(path)
+        return
+    if sr<dc:
+        print_maze_path(sr+1, sc, dr, dc, path+'v')
+    if sc<dc:
+        print_maze_path(sr, sc+1, dr, dc, path+'h')
+
+print_maze_path(1,1,2,3,'')
