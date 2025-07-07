@@ -7,3 +7,12 @@ def find_subsequences(s, index=0, current=""):
 
 subsequences = find_subsequences("abc")
 print(subsequences)
+
+def print_subsequence(str,idx,current):
+    if len(str)==idx:
+        print(current)
+        return
+    print_subsequence(str,idx+1,current+str[idx])
+    print_subsequence(str,idx+1,current)
+
+print_subsequence('abc',0,'')
