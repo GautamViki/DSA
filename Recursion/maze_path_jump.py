@@ -21,3 +21,19 @@ def get_maze_path_jump(sr,sc,dr,dc):
     return jump_paths
 
 print(get_maze_path_jump(1,1,2,2))
+
+def print_maze_path_jump(sr,sc,dr,dc,path):
+    if sr==dr and sc==dc:
+        print(path)
+        return
+    if sr>dr or sc>dc:
+        return
+    for jump in range(1,dr-sr+1):
+        print_maze_path_jump(sr+jump,sc,dr,dc,path+'v'+str(jump))
+    for jump in range(1,dc-sc+1):
+        print_maze_path_jump(sr, sc+jump, dr, dc, path+'h'+str(jump))
+    if sc<dc:
+        for jump in range(1,dr-sr+1):
+            print_maze_path_jump(sr+jump, sc+jump, dr, dc, path+'d'+str(jump))
+
+print_maze_path_jump(1,1,2,2,'')
