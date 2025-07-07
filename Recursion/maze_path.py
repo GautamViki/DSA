@@ -20,9 +20,9 @@ def print_maze_path(sr,sc,dr,dc,path):
     if sr == dr and sc == dc:
         print(path)
         return
-    if sr<dc:
-        print_maze_path(sr+1, sc, dr, dc, path+'v')
-    if sc<dc:
-        print_maze_path(sr, sc+1, dr, dc, path+'h')
+    if sr>dc or sc>dc:
+        return
+    print_maze_path(sr+1, sc, dr, dc, path+'v')
+    print_maze_path(sr, sc+1, dr, dc, path+'h')
 
 print_maze_path(1,1,2,3,'')
