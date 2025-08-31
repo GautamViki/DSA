@@ -21,12 +21,8 @@ class Solution:
                 i=i+1
                 j=j+1
 
-        while i<n:
-            result.append(nums1[i])
-            i=i+1
-        while j<m:
-            result.append(nums2[j])
-            j=j+1
+        result.extend(nums1[i:n])
+        result.extend(nums2[j:m])
         return result
 
 
